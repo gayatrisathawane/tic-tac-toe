@@ -43,6 +43,10 @@
   width:90px;
   background-color: #fff;
   border: 1px dashed rgb(141, 203, 242);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
 }
 
 .box:hover{

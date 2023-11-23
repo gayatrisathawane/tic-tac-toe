@@ -28,7 +28,9 @@ const App = () => {
 
       <div className='player-container'>
 
-        <span className='player-text'>player 1: 💓 </span>
+        
+        <span className='player-text'>player 1: ❌ </span>
+        <span className='player-text'>current player :{player ===1 ? '❌' :'⭕'}</span>
         <span className='player-text'>player 2:  ⭕ </span>
       </div>
 
