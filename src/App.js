@@ -18,6 +18,23 @@ const App = () => {
     9: "",
 
   })
+
+
+  const play = (boxNo)=>{
+    if(board[boxNo] !== "") {
+      alert("already filled")
+      return
+    }
+  if(player===1){
+    setBoard({...board,[boxNo]:'❌'})
+  }
+  else{
+     setBoard({...board,[boxNo]:'⭕'})
+
+  }
+  setPlayer(player===1 ?2:1)
+
+  }
   return (
     <div>
 
@@ -27,9 +44,7 @@ const App = () => {
       <button className='btn-new-game'>Start a new game</button>
 
       <div className='player-container'>
-
-        
-        <span className='player-text'>player 1: ❌ </span>
+        <div className='player-text'>player 1: ❌ </div>
         <span className='player-text'>current player :{player ===1 ? '❌' :'⭕'}</span>
         <span className='player-text'>player 2:  ⭕ </span>
       </div>
@@ -38,24 +53,24 @@ const App = () => {
       <div className='container'>
 
         <div className='row'>
-          <div className='box'>{board[1]}</div>
-          <div className='box'>{board[2]}</div>
-          <div className='box'>{board[3]}</div>
+          <div className='box' onClick={()=>{play(1)}}>{board[1]}</div>
+          <div className='box' onClick={()=>{play(2)}}>{board[2]}</div>
+          <div className='box' onClick={()=>{play(3)}}>{board[3]}</div>
 
         </div>
 
         <div className='row'>
-          <div className='box'>{board[4]}</div>
-          <div className='box'>{board[5]}</div>
-          <div className='box'>{board[6]}</div>
+          <div className='box'onClick={()=>{play(4)}}>{board[4]}</div>
+          <div className='box'onClick={()=>{play(5)}}>{board[5]}</div>
+          <div className='box'onClick={()=>{play(6)}}>{board[6]}</div>
 
         </div>
 
 
         <div className='row'>
-          <div className='box'>{board[7]}</div>
-          <div className='box'>{board[8]}</div>
-          <div className='box'>{board[9]}</div>
+          <div className='box'onClick={()=>{play(7)}}>{board[7]}</div>
+          <div className='box'onClick={()=>{play(8)}}>{board[8]}</div>
+          <div className='box'onClick={()=>{play(9)}}>{board[9]}</div>
 
         </div>
 
