@@ -4,7 +4,7 @@ import './App.css'
 
 const App = () => {
 
-  const [player, setPlayer] = useState(1)
+  const [player, setPlayer] = useState(2)
   const [board, setBoard] = useState({
 
     1: "",
@@ -22,7 +22,7 @@ const App = () => {
 
   const checkWinner = (player) => {
 
-    const symbol = (player === 1 ? '❌' : '⭕')
+    const symbol = (player === 1 ? '❤️' : '⭕')
 
     if (board[1] === symbol && board[2] === symbol && board[3] === symbol) {
 
@@ -71,7 +71,7 @@ const App = () => {
       return;
     }
     if (player === 1) {
-      setBoard({ ...board, [boxNo]: '❌' })
+      setBoard({ ...board, [boxNo]: '❤️' })
     }
     else {
       setBoard({ ...board, [boxNo]: '⭕' })
@@ -86,27 +86,49 @@ const App = () => {
   }, [board])
 
   const reset = ()=>{
-    
+    setPlayer(1);
+    setBoard({
+
+      1: "",
+      2: "",
+      3: "",
+      4: "",
+      5: "",
+      6: "",
+      7: "",
+      8: "",
+      9: "",
+  
+    })
+    setWinner(null)
+
+
   }
   return (
     <div>
 
       <img src={logo} alt="logo" className='logo' />
-      <h1 className='text-center text'>Let's Play The Tic-Tac-Toc Game ! </h1>
+      <h1 className='text-center text'>Let's Play The Tic-Tac-Toe Game ! </h1>
 
       {/* <button className='btn-new-game'>Start a new game</button> */}
 
       <div className='player-container'>
-        <div className='player-text'>Player 1: ❌ </div>
-        <span className='player-text'>current player :{player === 1 ? '❌' : '⭕'}</span>
-        <span className='player-text'>Player 2:  ⭕ </span>
+        <div className='player-text player1'>
+          Player 1
+          <p className='text-center'>❤️</p>
+          </div>
+        <div className='player-text'>current player :{player === 1 ? '❤️' : '⭕'}</div>
+        <div className='player-text player2'>
+          Player 2
+          <p className='text-center'>⭕</p>
+          </div>
       </div>
 
       <div>
         <p className='winner-div'>
           {winner? 
           (
-            <h2 className='text-center'>🎉🎊 congratulation you are win 🥳🥳🎊 {winner===1? '❌':'⭕'}
+            <h2 className='text-center winner-text'>🎉🎊 congratulation you are winner  🥳🎊 {winner===1? 'player 1 ❤️':'player 2 ⭕'}
             
             </h2>):null}
         </p>
@@ -140,7 +162,7 @@ const App = () => {
 
       </div>
 
-      <button className='btn-new-game'>Reset</button>
+      <button className='btn-new-game' type='button' onClick={reset}>Reset</button>
 
     </div>
   )

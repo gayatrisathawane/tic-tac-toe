@@ -16,6 +16,7 @@
   display: block;
   margin: 10px auto;
   border-radius: 5px;
+  font-size: 20px;
 }
 
 .container{
@@ -29,7 +30,7 @@
 }
 
 .text{
-  color: rgb(5, 79, 120);
+  color: rgb(5, 111, 169);
  
 }
 
@@ -59,12 +60,29 @@
 
 .player-container{
   display: flex;
+  position: relative;
   justify-content: space-around;
-  align-items: center;
+ 
 
+}
+.player1{
+  position:absolute;
+  top:200px;
+  left: 300px;
+}
+.player2{
+  position: absolute;
+  top:200px;
+  right:300px;
 }
 
 .player-text{
   font-size: 20px;
- 
+  border: 1px solid rgb(34, 147, 217);
+ padding: 8px 15px;
+ border-radius: 10px;
+ background-color:rgb(202, 234, 254) ;
+}
+.winner-text{
+  color:rgb(237, 0, 36);
 }
