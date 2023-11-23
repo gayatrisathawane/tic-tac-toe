@@ -1,5 +1,36 @@
+.logo{
+  height: 60px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
 .text-center{
   text-align: center;
+}
+
+.btn-new-game{
+  background-color:rgb(30, 113, 158) ;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.container{
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  background-color:rgb(89, 119, 147);
+  padding: 15px;
+  border-radius: 10px;
+
+}
+
+.text{
+  color: rgb(5, 79, 120);
+ 
 }
 
 .row{
@@ -8,7 +39,26 @@
 }
 
 .box{
-  height: 100px;
-  width:100px;
-  border: 1px solid black;
+  height: 90px;
+  width:90px;
+  background-color: #fff;
+  border: 1px dashed rgb(141, 203, 242);
+}
+
+.box:hover{
+  cursor: pointer;
+  background-color: aliceblue;
+  box-shadow: 0 0 5px 2px rgb(141, 203, 242);
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.player-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-text{
+  font-size: 20px;
 }
