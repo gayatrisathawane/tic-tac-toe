@@ -4,7 +4,7 @@ import './App.css'
 
 const App = () => {
 
-  const [player, setPlayer] = useState(2)
+  const [player, setPlayer] = useState(1)
   const [board, setBoard] = useState({
 
     1: "",
@@ -67,8 +67,7 @@ const App = () => {
 
   const play = (boxNo) => {
     if (board[boxNo] !== "" || winner !== null) {
-     
-      return;
+     return;
     }
     if (player === 1) {
       setBoard({ ...board, [boxNo]: '❤️' })
@@ -117,7 +116,7 @@ const App = () => {
           Player 1
           <p className='text-center'>❤️</p>
           </div>
-        <div className='player-text'>current player :{player === 1 ? '❤️' : '⭕'}</div>
+        <div className='player-text'>Current Player :{player === 1 ? '❤️' : '⭕'}</div>
         <div className='player-text player2'>
           Player 2
           <p className='text-center'>⭕</p>
